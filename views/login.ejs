@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🔐 Login | Fun Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sunny: #ffdd57;
+      --sky: #57c7ff;
+      --grass: #6bef8c;
+      --cloud: #ffffff;
+      --text: #333;
+      --radius: 1rem;
+      --shadow: rgba(0,0,0,0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, var(--sky), var(--grass));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: var(--text);
+    }
+
+    .form-container {
+      background: var(--cloud);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      box-shadow: 0 6px 16px var(--shadow);
+      width: 100%;
+      max-width: 400px;
+      animation: floatIn 0.8s ease-out both;
+      text-align: center;
+    }
+
+    .form-container h2 {
+      color: var(--sky);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .form-container button {
+      width: 100%;
+      background: var(--sunny);
+      border: none;
+      padding: 0.75rem 1rem;
+      margin-top: 1rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .form-container button:hover {
+      background: #ffcc00;
+      transform: scale(1.02);
+    }
+
+    .form-container a {
+      display: block;
+      margin-top: 1rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: var(--sky);
+      transition: color 0.3s;
+    }
+
+    .form-container a:hover {
+      color: #339edc;
+    }
+
+    @keyframes floatIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <form class="form-container" action="/mypage/login" method="POST">
+    <h2>🔐 Welcome Back!</h2>
+    <input name="email" type="email" placeholder="Email" required>
+    <input name="password" type="password" placeholder="Password" required>
+    <button type="submit">Login 🚪</button>
+    <a href="/mypage/register">Don’t have an account? Sign up →</a>
+  </form>
+
+</body>
+</html>

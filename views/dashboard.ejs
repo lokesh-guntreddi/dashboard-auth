@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🎉 Fun Dashboard</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --sunny: #ffdd57;
+      --sky:   #57c7ff;
+      --grass: #6bef8c;
+      --cloud: #ffffff;
+      --text:  #333;
+      --radius: 1rem;
+      --shadow: rgba(0,0,0,0.1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, var(--sky), var(--grass));
+      min-height: 100vh;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 2rem;
+      animation: floatIn 1s ease-out both;
+    }
+    header {
+      width: 100%;
+      max-width: 800px;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background: var(--sunny);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      animation: wiggle 2s infinite;
+    }
+    header h1 { font-size: 1.5rem; font-weight: 600; }
+    header .user-info a { color: inherit; text-decoration: underline; }
+    main {
+      width: 100%;
+      max-width: 800px;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .hero {
+      background: var(--cloud);
+      border-radius: var(--radius);
+      padding: 2.5rem 1.5rem;
+      box-shadow: 0 4px 12px var(--shadow);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      animation: pop 0.8s ease-out;
+    }
+    .hero svg {
+      position: absolute;
+      bottom: -20px; left: -20px;
+      width: 120px; opacity: 0.1;
+    }
+    .hero h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+      color: var(--sky);
+    }
+    .hero p {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.4;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--cloud);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .card:hover {
+      transform: translateY(-6px) rotate(-1deg);
+      box-shadow: 0 8px 16px var(--shadow);
+    }
+    .card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      color: var(--sky);
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pop {
+      0%   { transform: scale(0.9); opacity: 0; }
+      60%  { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+    @keyframes wiggle {
+      0%,100% { transform: rotate(0); }
+      25%      { transform: rotate(1deg); }
+      75%      { transform: rotate(-1deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>👋 Hey, <%= name %>!</h1>
+    <div class="user-info">
+      <%= email %> | <a href="/mypage/logout">Log out</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Funny Message -->
+    <section class="hero">
+      <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="50" fill="var(--sky)" />
+      </svg>
+      <h2>Whatcha Lookin’ At?</h2>
+      <p>
+        Welcome to the world’s most delightful dashboard! No boring stats here—only guaranteed giggles, spontaneous smiles, and the occasional existential thought about coffee ☕. Sit back, relax, and enjoy the ride!
+      </p>
+    </section>
+
+    <!-- Joke Cards -->
+    <div class="cards">
+      
+
+    <div class="card">
+  <h3>Why did the database administrator leave his wife?</h3>
+  <p>She had one-to-many relationships. 💔🔗</p>
+</div>
+<div class="card">
+  <h3>Why was the JavaScript developer sad?</h3>
+  <p>Because he didn’t Node how to Express himself. 😢📦</p>
+</div>
+<div class="card">
+  <h3>“You’re the CSS to my HTML—bringing style to my structure.”</h3>
+  <p>Without you, I’m just plain text. 📝✨</p>
+</div>
+
+      <div class="card">
+  <h3>“Even the Taj Mahal wasn’t built in a day—🏰✨”</h3>
+  <p>🔨 Grab your chisel and start chiseling your dreams! 💭🚀</p>
+</div>
+
+    </div>
+  </main>
+
+</body>
+</html>
