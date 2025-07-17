@@ -20,7 +20,8 @@ app.use(
   })
 );
 app.use('/mypage',router)
-app.listen(process.env.PORT,()=>{
+const Port = process.env.PORT || 3000
+app.listen(Port,()=>{
     console.log(`server is running on port ${process.env.PORT}`)
 });
 MongoDB()
